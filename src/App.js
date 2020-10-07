@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route } from "react-router-dom";
+import HomePage from "./components/home/HomePage";
+import "./App.css";
+import Header from "./components/common/Header";
+import JavaScriptPage from "./components/javascriptpage/JavaScriptPage";
+import ReactPage from "./components/reactpage/ReactPage";
+import PythonPage from "./components/pythonPage/PythonPage";
+import MachineLearning from "./components/machinelearning/MachineLearning";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Route path="/" exact component={HomePage} />
+      <Route path="/react" component={ReactPage} />
+      <Route path="/js" component={JavaScriptPage} />
+      <Route path="/python" component={PythonPage} />
+      <Route path="/ml" component={MachineLearning} />
+      {/* <HomePage /> */}
+    </>
   );
 }
 
